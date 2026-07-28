@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+- Redesigned the whole page to match the app's 1.5.0 Material
+  redesign: Urbanist replaces Inter (still embedded — no external
+  font request), the app's own warm yellow-biased Material tokens
+  replace the old flat grays, and the page now follows the system
+  color scheme with a light and a dark theme, like the app itself.
+  Buttons are pill-shaped, code renders in Urbanist (the app dropped
+  its monospace face), and keyboard focus rings and
+  `prefers-reduced-motion` support were carried over from the app's
+  stylesheet.
+- The demo card is now a scaled-down copy of the redesigned app
+  chrome, piece by piece: a navigation drawer with pill-shaped note
+  rows (yellow-tinted active state), a rounded Material search bar
+  that really filters notes by name, drawer brand header,
+  Export/Import pills and a footer link to the repo, a top app bar
+  with the brand mark and round state-layer icon buttons, a
+  segmented Writer/Markdown control, a live save indicator, an
+  extended "New note" FAB bottom right (replacing the old tiny "+"
+  in the sidebar), and the app's editor content styles — amber
+  links, tinted callouts, accent-colored checkboxes. The app-bar
+  menu button now actually collapses the drawer, and on phone
+  widths the app bar wraps into two rows exactly like the real app.
+
 - Fixed note title and content in the demo appearing center-justified
   (inherited from the hero section's centered layout) instead of
   left-justified, matching how markdown/notes actually render.
