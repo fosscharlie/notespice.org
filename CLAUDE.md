@@ -11,14 +11,23 @@ changes to this site unless the owner asks for one.
 ## About this site
 
 - The whole site is one self-contained `index.html` served by GitHub
-  Pages: fonts (Urbanist, matching the app), logo, CSS, and the live
-  demo's JS are all embedded. Keep it zero-external-request.
+  Pages: font, logo, CSS, and the live demo's JS are all embedded.
+  Keep it zero-external-request.
 - The design mirrors the app's own stylesheet
   (fosscharlie/notespice `static/style.css`) — when the app's design
-  changes, the site follows it, not the other way around. One
-  deliberate exception (owner request, 2026-07-28): the site's dark
-  theme uses cool navy neutrals (#10141C canvas, #19212B surfaces)
-  instead of the app's warm darks.
+  changes, the site follows it, not the other way around. Two
+  deliberate exceptions (owner requests):
+  - (2026-07-28) the site's dark theme uses cool navy neutrals
+    (#10141C canvas, #19212B surfaces) instead of the app's warm
+    darks.
+  - (2026-07-28) the site's typeface is Geist, not the app's
+    Urbanist — self-hosted and embedded the same way (fetched once,
+    base64 in `index.html`, no runtime font-service request). If the
+    app's font changes again, the site does NOT follow — Geist stays
+    unless the owner asks otherwise.
+- A small `v` + version badge sits fixed bottom-right of the page,
+  linking to that release's GitHub notes — keep it in sync with
+  whatever version CHANGELOG.md's top section names.
 - Every update is a release, the same way the notespice app repo
   does it: add a `## X.Y.Z — YYYY-MM-DD` section to the top of
   `CHANGELOG.md` (patch bump for tweaks/fixes, minor for features or

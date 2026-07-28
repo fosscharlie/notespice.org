@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.0 — 2026-07-28
+
+- Typeface switched from Urbanist to Geist, site-wide — including the
+  live demo card (Writer, Markdown, and toolbar all inherit the body
+  font, so nothing was left on the old face). Urbanist is gone
+  completely: both `@font-face` rules, the base64 payload, and every
+  mention of the name were removed, not just superseded. Geist is
+  self-hosted the same way — fetched once, embedded as base64 in
+  `index.html` — so there's still no request to any font service at
+  runtime, ever.
+- Added a small site-version badge, bottom right of the page, linking
+  to this release's GitHub notes.
+
 ## 1.3.0 — 2026-07-28
 
 - New dark-theme palette: cool navy neutrals — `#10141C` page
