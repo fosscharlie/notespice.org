@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-- Removed the glyph icons from the feature list — each row is now
-  just its heading and description, flush left.
-
 - Added a "Blank lines that stay" feature row: unlike most markdown
   editors, which silently collapse anything beyond one blank line,
   Notespice keeps extra empty lines — stored as literal `<br>` lines
