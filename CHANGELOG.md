@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added a "Blank lines that stay" feature row: unlike most markdown
+  editors, which silently collapse anything beyond one blank line,
+  Notespice keeps extra empty lines — stored as literal `<br>` lines
+  in the markdown, so GitHub renders them identically.
+
 - Redesigned the whole page to match the app's 1.5.0 Material
   redesign: Urbanist replaces Inter (still embedded — no external
   font request), the app's own warm yellow-biased Material tokens
