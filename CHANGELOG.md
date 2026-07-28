@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.5.0 — 2026-07-28
+
+- Footer credit now reads "...vibe-coded with Claude - powered by
+  awwwe", with an inline awwwe mark: the full a-WWW-e wordmark in
+  light theme, and the WWW badge alone in dark theme (the wordmark's
+  dark lettering would disappear against the dark canvas). Drawn as
+  inline SVG using the site's own embedded Geist font — no separate
+  image files, no external request, consistent with how every other
+  asset on this page is embedded. This is a redrawn approximation of
+  the supplied awwwe logo, not a pixel copy of a source file (none
+  was available to embed directly). The credit isn't a link yet —
+  add the awwwe destination URL to wire that up.
+
 ## 1.4.1 — 2026-07-28
 
 - Moved the "SELF-HOSTED · OPEN SOURCE" eyebrow down to sit directly
