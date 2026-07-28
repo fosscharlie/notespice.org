@@ -1,0 +1,61 @@
+# One-time backfill: creates the GitHub releases (and their tags) for
+# the versions that shipped before the release workflow existed —
+# 1.0.0 through 1.2.1. Each release matches the format release.yml
+# produces: tag = bare version, title "X.Y.Z — YYYY-MM-DD" from the
+# CHANGELOG.md heading, body = that version's changelog section
+# verbatim, tagged at the commit where that version went live.
+#
+# Idempotent: versions that already have a release are skipped, so
+# re-running is harmless. Safe to delete once the backfill has run.
+name: Backfill releases
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Create missing releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          create_one() {
+            v="$1"; target="$2"
+            if gh release view "$v" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+              echo "$v: release already exists, skipping"
+              return 0
+            fi
+            TAG="$v" python3 - <<'PYEOF'
+          import os, re
+          tag = os.environ["TAG"]
+          text = open("CHANGELOG.md", encoding="utf-8").read()
+          m = re.search(
+              rf"^## {re.escape(tag)} — (\S+)\n(.*?)(?=^## |\Z)",
+              text, re.M | re.S)
+          if not m:
+              raise SystemExit(f"No CHANGELOG.md section found for {tag}")
+          open("release-title.txt", "w", encoding="utf-8").write(f"{tag} — {m.group(1)}")
+          open("release-body.md", "w", encoding="utf-8").write(m.group(2).strip() + "\n")
+          PYEOF
+            gh release create "$v" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$target" \
+              --title "$(cat release-title.txt)" \
+              --notes-file release-body.md
+            echo "$v: created"
+          }
+
+          create_one 1.0.0 bbd8db9b892a85b5176444d260a2a5e566e9e2ad
+          create_one 1.1.0 9aa4cf1a97ac42459b37bafa668f4e299a8f3263
+          create_one 1.2.0 91088c97ccaf600526137900767eecda424d1d30
+          create_one 1.2.1 802ca21b602cecbdedbf923f50e1285365db772b
