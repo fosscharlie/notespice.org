@@ -1,17 +1,28 @@
 # Changelog
 
-## Unreleased
+## 1.3.0 — 2026-07-28
 
 - New dark-theme palette: cool navy neutrals — `#10141C` page
   background, `#19212B` surfaces (app window, cards, code blocks),
   with matching blue-gray drawer, inputs, borders, and text tints —
   replacing the warm yellow-biased darks inherited from the app. The
   brand yellow accent and the light theme are unchanged.
+- Versioned releases, the same way the notespice app repo does them:
+  every update now gets its own `## X.Y.Z — YYYY-MM-DD` changelog
+  section, and pushing the version tag creates the matching GitHub
+  release automatically (new `release.yml` workflow — tag = bare
+  version, title from the changelog heading, body = the section
+  verbatim). Releases 1.0.0 through 1.2.1 backfilled, each tagged at
+  the commit where that version went live.
+
+## 1.2.1 — 2026-07-28
 
 - Added a "Blank lines that stay" feature row: unlike most markdown
   editors, which silently collapse anything beyond one blank line,
   Notespice keeps extra empty lines — stored as literal `<br>` lines
   in the markdown, so GitHub renders them identically.
+
+## 1.2.0 — 2026-07-28
 
 - Redesigned the whole page to match the app's 1.5.0 Material
   redesign: Urbanist replaces Inter (still embedded — no external
@@ -34,6 +45,8 @@
   links, tinted callouts, accent-colored checkboxes. The app-bar
   menu button now actually collapses the drawer, and on phone
   widths the app bar wraps into two rows exactly like the real app.
+
+## 1.1.0 — 2026-07-22
 
 - Fixed note title and content in the demo appearing center-justified
   (inherited from the hero section's centered layout) instead of

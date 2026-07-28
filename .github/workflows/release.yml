@@ -1,0 +1,67 @@
+# Pushing a version tag (e.g. 1.2.1) creates the matching GitHub
+# release automatically, in the same format the notespice app repo
+# uses: tag = bare version number, release title "1.2.1 — YYYY-MM-DD"
+# taken from the CHANGELOG.md heading, release body = that version's
+# changelog section, verbatim.
+#
+# So cutting a release is just:
+#   git tag -a 1.2.1 -m "notespice.org 1.2.1" && git push origin 1.2.1
+name: Release from changelog
+
+on:
+  push:
+    tags:
+      - "[0-9]*.[0-9]*.[0-9]*"
+  # Manual alternative for when pushing a tag isn't possible (e.g. a
+  # remote session whose git relay only allows branch pushes): give it
+  # the version and it creates the tag at main's head plus the release.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (must match a CHANGELOG.md heading)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # The changelog on main is the source of truth for every
+      # release's title and body — including tags pointing at older
+      # commits, whose own tree may predate later changelog entries.
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.version || github.ref_name }}
+        run: |
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $TAG already exists — nothing to do."
+            exit 0
+          fi
+          python3 - <<'PYEOF'
+          import os, re
+          tag = os.environ["TAG"]
+          text = open("CHANGELOG.md", encoding="utf-8").read()
+          m = re.search(
+              rf"^## {re.escape(tag)} — (\S+)\n(.*?)(?=^## |\Z)",
+              text, re.M | re.S)
+          if not m:
+              raise SystemExit(f"No CHANGELOG.md section found for {tag}")
+          open("release-title.txt", "w", encoding="utf-8").write(f"{tag} — {m.group(1)}")
+          open("release-body.md", "w", encoding="utf-8").write(m.group(2).strip() + "\n")
+          PYEOF
+          # --target is used only when the tag doesn't exist yet (the
+          # workflow_dispatch path creates it at main's head); for a
+          # pushed tag it's ignored and the existing tag is used.
+          gh release create "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target main \
+            --title "$(cat release-title.txt)" \
+            --notes-file release-body.md
