@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1 — 2026-07-28
+
+- Moved the "SELF-HOSTED · OPEN SOURCE" eyebrow down to sit directly
+  above the View on GitHub / Get started buttons, instead of above
+  the headline.
+
 ## 1.4.0 — 2026-07-28
 
 - Typeface switched from Urbanist to Geist, site-wide — including the
