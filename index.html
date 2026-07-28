@@ -42,22 +42,24 @@
   --max-w: 1060px; --max-w-narrow: 720px;
 }
 @media (prefers-color-scheme: dark) {
+  /* Dark theme: cool navy neutrals (owner's palette — #10141C canvas,
+     #19212B surfaces) rather than the app's warm tones. */
   :root {
-    --bg: #17150F;
-    --bg-sidebar: #1E1B13;
-    --bg-canvas: #0F0D08;
-    --surface-high: #2A2619;
-    --code-bg: #272213;
-    --border: #48432F;
-    --text: #EAE3D2;
-    --text-muted: #A8A190;
+    --bg: #19212B;
+    --bg-sidebar: #1E2733;
+    --bg-canvas: #10141C;
+    --surface-high: #273240;
+    --code-bg: #222B36;
+    --border: #3B4757;
+    --text: #E7EBF2;
+    --text-muted: #9AA4B5;
     --accent: #FFC107;
     --on-accent: #241A00;
     --accent-tint: rgba(255, 193, 7, 0.16);
     --link: #FFC107;
     --danger: #FFB4AB;
     --on-danger: #690005;
-    --hover-layer: rgba(234, 227, 210, 0.08);
+    --hover-layer: rgba(231, 235, 242, 0.08);
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px 1px rgba(0, 0, 0, 0.25);
     --shadow-3: 0 4px 8px 3px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.4);
     --yaml-key: #7fb0ff;

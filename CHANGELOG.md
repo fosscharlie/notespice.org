@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- New dark-theme palette: cool navy neutrals — `#10141C` page
+  background, `#19212B` surfaces (app window, cards, code blocks),
+  with matching blue-gray drawer, inputs, borders, and text tints —
+  replacing the warm yellow-biased darks inherited from the app. The
+  brand yellow accent and the light theme are unchanged.
+
 - Added a "Blank lines that stay" feature row: unlike most markdown
   editors, which silently collapse anything beyond one blank line,
   Notespice keeps extra empty lines — stored as literal `<br>` lines

@@ -15,7 +15,10 @@ changes to this site unless the owner asks for one.
   demo's JS are all embedded. Keep it zero-external-request.
 - The design mirrors the app's own stylesheet
   (fosscharlie/notespice `static/style.css`) — when the app's design
-  changes, the site follows it, not the other way around.
+  changes, the site follows it, not the other way around. One
+  deliberate exception (owner request, 2026-07-28): the site's dark
+  theme uses cool navy neutrals (#10141C canvas, #19212B surfaces)
+  instead of the app's warm darks.
 - Update `CHANGELOG.md` (Unreleased section) with each change.
 - Verify visual changes in a real browser before pushing (Chromium is
   preinstalled; Playwright works with
