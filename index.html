@@ -265,17 +265,6 @@ footer nav a { color: var(--text-muted); margin: 0 10px; font-size: 13px; }
 footer nav a:hover { color: var(--text); }
 footer .credit { color: var(--text-muted); font-size: 13px; margin-top: 16px; }
 
-/* awwwe credit mark: full wordmark (a + WWW badge + e) in light theme;
-   the "a"/"e" strokes are dark and would disappear on the dark-theme
-   canvas, so dark theme shows the WWW badge alone instead. */
-.awwwe-mark { display: inline-flex; align-items: center; vertical-align: -3px; margin-left: 4px; }
-.awwwe-logo { display: block; height: 15px; width: auto; }
-.awwwe-logo.awwwe-compact { display: none; }
-@media (prefers-color-scheme: dark) {
-  .awwwe-logo.awwwe-full { display: none; }
-  .awwwe-logo.awwwe-compact { display: block; }
-}
-
 /* Small, quiet site-version badge, bottom right — links to this
    release on GitHub. Doesn't intrude on mobile layouts since it sits
    below all page content in the stacking order and out of the way
@@ -503,20 +492,7 @@ footer .credit { color: var(--text-muted); font-size: 13px; margin-top: 16px; }
     <a href="https://github.com/FOSSCharlie/notespice/blob/main/LICENSE">MIT License</a>
     <a href="https://github.com/FOSSCharlie/notespice/releases">Releases</a>
   </nav>
-  <p class="credit"><a href="https://github.com/FOSSCharlie/notespice">Notespice</a> &mdash; vibe-coded with Claude - powered by
-    <span class="awwwe-mark" aria-label="awwwe">
-      <svg class="awwwe-logo awwwe-full" viewBox="0 0 220 66" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <text x="0" y="59" font-family="Geist, sans-serif" font-weight="900" font-size="66" fill="var(--text)">a</text>
-        <rect x="40" y="2" width="132" height="60" rx="14" fill="#2A6BE8"/>
-        <text x="49" y="45" font-family="Geist, sans-serif" font-weight="900" font-size="37" fill="#ffffff" letter-spacing="-5" transform="skewX(-6)">WWW</text>
-        <text x="172" y="59" font-family="Geist, sans-serif" font-weight="900" font-size="66" fill="var(--text)">e</text>
-      </svg>
-      <svg class="awwwe-logo awwwe-compact" viewBox="0 0 156 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="1" y="1" width="154" height="48" rx="12" fill="#2A6BE8"/>
-        <text x="9" y="35" font-family="Geist, sans-serif" font-weight="900" font-size="30" fill="#ffffff" letter-spacing="-4" transform="skewX(-6)">WWW</text>
-      </svg>
-    </span>
-  </p>
+  <p class="credit"><a href="https://github.com/FOSSCharlie/notespice">Notespice</a> &mdash; vibe-coded with Claude.</p>
 </footer>
 
 <script>
@@ -1185,8 +1161,8 @@ footer .credit { color: var(--text-muted); font-size: 13px; margin-top: 16px; }
   <svg class="sponsor-external-icon" viewBox="0 0 20 20" aria-hidden="true" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M8 4H4v12h12v-4M12 4h4v4M16 4l-7 7"/></svg>
 </span>
 
-<a class="site-version" href="https://github.com/FOSSCharlie/notespice.org/releases/tag/1.5.1"
-   target="_blank" rel="noopener" title="notespice.org release notes">v1.5.1</a>
+<a class="site-version" href="https://github.com/FOSSCharlie/notespice.org/releases/tag/1.5.2"
+   target="_blank" rel="noopener" title="notespice.org release notes">v1.5.2</a>
 
 </body>
 </html>

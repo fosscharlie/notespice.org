@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.2 — 2026-07-28
+
+- Removed the awwwe credit entirely — the mark and the "powered by"
+  text alongside it. The footer credit is back to plain "Notespice —
+  vibe-coded with Claude."
+
 ## 1.5.1 — 2026-07-28
 
 - Added a "Sponsored by Lightmorphic" credit, bottom right, stacked
