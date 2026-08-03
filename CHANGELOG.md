@@ -4,9 +4,10 @@
 
 - Moved the Lightmorphic sponsor mark off the fixed bottom-right
   corner and into the footer credit line itself, replacing where the
-  old "powered by" text used to sit: "Notespice — vibe-coded with
-  Claude - Sponsored by [Lightmorphic logo]". Still not a link — needs
-  the Lightmorphic destination URL to open in a new tab.
+  old "powered by" text used to sit: "Notespice - vibe-coded with
+  Claude - Sponsored by [Lightmorphic logo]" — plain hyphens
+  throughout, not an em dash. Still not a link — needs the
+  Lightmorphic destination URL to open in a new tab.
 
 ## 1.5.2 — 2026-07-28
 
