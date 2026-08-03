@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.4 — 2026-07-28
+
+- Lightmorphic logo shown at its actual size (250×50) instead of
+  shrunk to fit the footer text — it was too small to read clearly.
+  Still not a link — needs the Lightmorphic destination URL.
+
 ## 1.5.3 — 2026-07-28
 
 - Moved the Lightmorphic sponsor mark off the fixed bottom-right
