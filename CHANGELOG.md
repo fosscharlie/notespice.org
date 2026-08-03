@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1 — 2026-07-28
+
+- Added a "Sponsored by Lightmorphic" credit, bottom right, stacked
+  directly above the version badge. The whole badge — text, logo, and
+  a small "opens in a new tab" icon — is a single link; the logo is
+  the real Lightmorphic wordmark (light-theme and dark-theme files),
+  embedded as base64 the same way every other image on this page is,
+  so the site stays a single self-contained file with zero external
+  requests. Not a link yet — needs the Lightmorphic destination URL.
+
 ## 1.5.0 — 2026-07-28
 
 - Footer credit now reads "...vibe-coded with Claude - powered by
