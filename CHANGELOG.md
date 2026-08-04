@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.5 — 2026-08-04
+
+- Lightmorphic logo sized down to 25px tall (was shown at its full
+  native 250×50) — sits more comfortably next to the footer text.
+
 ## 1.5.4 — 2026-07-28
 
 - Lightmorphic logo shown at its actual size (250×50) instead of
